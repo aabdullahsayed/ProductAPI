@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductsAPI.Data;
 using ProductsAPI.Models;
+using ProductsAPI.Services;
 
 namespace ProductsAPI.Controllers;
 
@@ -10,47 +11,41 @@ namespace ProductsAPI.Controllers;
 public class ProductsController:ControllerBase
 {
     
-
-    private readonly AppDbContext _context;
-
-    public ProductsController(AppDbContext context)
+    private readonly IProductService _service;
+    public ProductsController(IProductService service)
     {
-        _context = context;
+        _service = service;
     }
-    
     
     [HttpGet]
     public IActionResult GetProducts()
     {
-        return Ok(_context.Products);
+        return Ok(_service.GetAllProducts());
     }
 
     [HttpPost]
     public IActionResult AddProduct(Product product)
     {
+        
+        var createdProduct = _service.AddProduct(product);
 
-        _context.Products.Add(product);
-        _context.SaveChanges();
-        return Ok(_context.Products);
+        return Ok(createdProduct);
     }
 
 
     [HttpGet("{id}")]
         public IActionResult GetProductbyId(int id)
         {
+
+            var product = _service.GetProductById(id);
             
-            var product = _context.Products.FirstOrDefault(p => p.ID == id);
             return Ok(product);
         }
 
     [HttpPut("{id}")]
     public IActionResult UpdateProduct(Product update, int id)
     {
-        var res = _context.Products.FirstOrDefault(p => p.ID == id);
-
-        res.Name = update.Name; 
-        res.Price = update.Price;
-        _context.SaveChanges();
+        var res = _service.UpdateProduct(id, update);
 
         return Ok(res);
     }
@@ -58,12 +53,8 @@ public class ProductsController:ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteProduct(int id)
     {
-        var delete = _context.Products.FirstOrDefault(p => p.ID == id);
-
-        _context.Products.Remove(delete);
-        _context.SaveChanges();
-
-        return Ok(_context.Products);
+        var delete = _service.DeleteProduct(id);
+        return Ok(delete);
     }
     
 }
