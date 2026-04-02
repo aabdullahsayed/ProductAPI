@@ -10,6 +10,9 @@ The base URL for these endpoints is `/api/Products`.
 | `PUT` | `/api/Products/{id}` | Updates an existing product by its `id` | `Product` object (JSON) |
 | `DELETE` | `/api/Products/{id}` | Deletes a specific product by its `id` | None |
 
+## The Flow
+
+<img src="flow.svg">
 
 `This code represents a classic ASP.NET Core API controller before the introduction of a Service Layer. In this architecture, the controller is acting as a "fat controller," meaning it takes on more responsibilities than it ideally should.`
 ```c#

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f8fafc" rx="8" />
+
+  <style>
+    .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; rx: 6; }
+    .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; }
+    .subtitle { font-family: system-ui, sans-serif; font-size: 12px; fill: #64748b; }
+    .line { stroke: #475569; stroke-width: 2; }
+    .label { font-family: system-ui, sans-serif; font-size: 12px; fill: #475569; font-style: italic; }
+  </style>
+
+  <g transform="translate(300, 40)">
+    <rect width="200" height="50" class="box" stroke-dasharray="4" />
+    <text x="100" y="25" text-anchor="middle" alignment-baseline="middle" class="title">Client / Frontend</text>
+    <text x="100" y="40" text-anchor="middle" class="subtitle">(Postman, React, Mobile App)</text>
+  </g>
+
+  <line x1="380" y1="90" x2="380" y2="140" class="line" marker-end="url(#arrow-down)" />
+  <line x1="420" y1="140" x2="420" y2="90" class="line" marker-end="url(#arrow-down)" />
+  <text x="370" y="120" text-anchor="end" class="label">HTTP Request (JSON)</text>
+  <text x="430" y="120" text-anchor="start" class="label">HTTP Response (200 OK)</text>
+
+  <g transform="translate(300, 150)">
+    <rect width="200" height="60" class="box" fill="#f1f5f9" />
+    <text x="100" y="25" text-anchor="middle" class="title">Controller</text>
+    <text x="100" y="45" text-anchor="middle" class="subtitle">The Request Handler</text>
+  </g>
+  <g transform="translate(80, 160)">
+    <text x="0" y="10" class="subtitle">• Routes HTTP Requests</text>
+    <text x="0" y="25" class="subtitle">• Validates Input Models</text>
+    <text x="0" y="40" class="subtitle">• Returns HTTP Status Codes</text>
+  </g>
+
+  <line x1="380" y1="210" x2="380" y2="280" class="line" marker-end="url(#arrow-down)" />
+  <line x1="420" y1="280" x2="420" y2="210" class="line" marker-end="url(#arrow-down)" />
+  <text x="370" y="250" text-anchor="end" class="label">Calls Method </text>
+  <text x="430" y="250" text-anchor="start" class="label">Returns Result / Throws Error</text>
+
+  <g transform="translate(300, 290)">
+    <rect width="200" height="60" class="box" fill="#e2e8f0" stroke="#94a3b8" />
+    <text x="100" y="25" text-anchor="middle" class="title">Service Layer</text>
+    <text x="100" y="45" text-anchor="middle" class="subtitle">The Business Logic Layer</text>
+  </g>
+  <g transform="translate(80, 300)">
+    <text x="0" y="10" class="subtitle">• Core Business Logic</text>
+    <text x="0" y="25" class="subtitle">• Calculations &amp; Rules</text>
+    <text x="0" y="40" class="subtitle">• Orchestrates Work</text>
+  </g>
+
+  <line x1="380" y1="350" x2="380" y2="420" class="line" marker-end="url(#arrow-down)" />
+  <line x1="420" y1="420" x2="420" y2="350" class="line" marker-end="url(#arrow-down)" />
+  <text x="370" y="390" text-anchor="end" class="label">Requests Data (ID)</text>
+  <text x="430" y="390" text-anchor="start" class="label">Returns Domain Entity</text>
+
+  <g transform="translate(300, 430)">
+    <rect width="200" height="60" class="box" fill="#f1f5f9" />
+    <text x="100" y="25" text-anchor="middle" class="title">Repository</text>
+    <text x="100" y="45" text-anchor="middle" class="subtitle">The Data Access Layer</text>
+  </g>
+  <g transform="translate(80, 440)">
+    <text x="0" y="10" class="subtitle">• Data Access Logic</text>
+    <text x="0" y="25" class="subtitle">• Entity Framework Context</text>
+    <text x="0" y="40" class="subtitle">• CRUD Operations Only</text>
+  </g>
+
+  <line x1="380" y1="490" x2="380" y2="530" class="line" marker-end="url(#arrow-down)" />
+  <line x1="420" y1="530" x2="420" y2="490" class="line" marker-end="url(#arrow-down)" />
+  
+  <g transform="translate(300, 540)">
+    <path d="M 0 15 C 0 0, 200 0, 200 15 L 200 45 C 200 60, 0 60, 0 45 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+    <ellipse cx="100" cy="15" rx="100" ry="15" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="100" y="35" text-anchor="middle" class="title">SQL Database</text>
+  </g>
+
+</svg>
