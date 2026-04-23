@@ -25,7 +25,6 @@ public class ProductRepository:IProductRepository
     public void Add(Product product)
     {
         _context.Add(product);
-        _context.SaveChanges();
     }
 
     public void Update(Product product)
